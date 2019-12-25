@@ -4,18 +4,25 @@ A boilerplate for building web app with the MERN stack.
 
 ## Installation
 
-Use the package manager npm to install node modules.
+Use the npm package manager to install node modules.
 
 ```bash
 npm install # installs backend node modules
-```
-
-```bash
 cd client # switch to frontend client directory
+npm install # installs frontend node modules
+cd .. # switch to project root directory
 ```
 
+## Add configurations
+
+Add two `.json` configuration files in the `config` directory, and save them `default.json` as and `production.json`
+
+The configuration files should contain the following:
+
 ```bash
-npm install # installs frontend node modules
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
 ```
 
 ## Contributing
