@@ -15,7 +15,7 @@ cd client # switch to frontend client directory
 ```
 
 ```bash
-cd install # installs frontend node modules
+npm install # installs frontend node modules
 ```
 
 ## Contributing
