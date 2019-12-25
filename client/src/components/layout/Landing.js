@@ -14,7 +14,7 @@ const Landing = ({ isAuthenticated }) => {
         <div className="landing-inner">
           <h1 className="x-large">MERN Stack Boilerplate</h1>
           <p className="lead">
-            A boilerplate for building web apps with MERN stack.
+            A boilerplate for building web apps with MERN stack
           </p>
           <div className="buttons">
             <Link to="/register" className="btn btn-primary">
