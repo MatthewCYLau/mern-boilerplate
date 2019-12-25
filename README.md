@@ -7,15 +7,15 @@ A boilerplate for building web app with the MERN stack.
 Use the package manager npm to install node modules.
 
 ```bash
-npm install
+npm install # installs backend node modules
 ```
 
 ```bash
-cd client
+cd client # switch to frontend client directory
 ```
 
 ```bash
-cd install
+cd install # installs frontend node modules
 ```
 
 ## Contributing
