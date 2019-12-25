@@ -10,7 +10,7 @@ Use the npm package manager to install node modules.
 npm install # installs backend node modules
 cd client # switch to frontend client directory
 npm install # installs frontend node modules
-cd .. # switch to project root directory
+cd .. # return to project root directory
 ```
 
 ## Add configurations
