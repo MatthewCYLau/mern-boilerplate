@@ -20,9 +20,18 @@ Add two `.json` configuration files in the `config` directory, and save them `de
 The configuration files should contain the following:
 
 ```bash
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
+{
+  "mongoURI": #Your MongoDB connection URI wrapped in double-quotes
+  "jwtSecret": #Any string as your JSON web token secret
+}
+```
+
+## Usage
+
+In the project root directory, run this command:
+
+```bash
+npm run dev
 ```
 
 ## Contributing
