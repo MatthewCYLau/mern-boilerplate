@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 const Landing = ({ isAuthenticated }) => {
   if (isAuthenticated) {
@@ -12,17 +13,15 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">MERN Stack Boilerplate</h1>
-          <p className="lead">
-            A boilerplate for building web apps with MERN stack
-          </p>
-          <div className="buttons">
-            <Link to="/register" className="btn btn-primary">
-              Sign Up
-            </Link>
-            <Link to="/login" className="btn btn-light">
-              Login
-            </Link>
+          <h1>MERN Stack Boilerplate</h1>
+          <p>A boilerplate for building web apps with MERN stack</p>
+          <div>
+            <Button className="buttons" variant="primary" href="/register">
+              Register
+            </Button>
+            <Button className="buttons" variant="light" href="/login">
+              Sign In
+            </Button>
           </div>
         </div>
       </div>

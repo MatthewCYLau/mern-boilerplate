@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login } from "../../actions/auth";
+import { Form, Button } from "react-bootstrap";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -26,13 +27,14 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign In</h1>
-      <p className="lead">
+      <h1>Sign In</h1>
+      <p>
         <i className="fas fa-user" /> Sign Into Your Account
       </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
+      <Form onSubmit={e => onSubmit(e)}>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
             type="email"
             placeholder="Email Address"
             name="email"
@@ -40,9 +42,10 @@ const Login = ({ login, isAuthenticated }) => {
             onChange={e => onChange(e)}
             required
           />
-        </div>
-        <div className="form-group">
-          <input
+        </Form.Group>
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control
             type="password"
             placeholder="Password"
             name="password"
@@ -50,11 +53,13 @@ const Login = ({ login, isAuthenticated }) => {
             onChange={e => onChange(e)}
             minLength="6"
           />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Login" />
-      </form>
-      <p className="my-1">
-        Don't have an account? <Link to="/register">Sign Up</Link>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Login
+        </Button>
+      </Form>
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
       </p>
     </Fragment>
   );

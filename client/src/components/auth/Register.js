@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
+import { Form, Button, Row, Col } from "react-bootstrap";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -33,50 +34,73 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Sign Up</h1>
-      <p className="lead">
+      <h1>Register</h1>
+      <p>
         <i className="fas fa-user" /> Create Your Account
       </p>
-      <form className="form" onSubmit={e => onSubmit(e)}>
-        <div className="form-group">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            name="password2"
-            value={password2}
-            onChange={e => onChange(e)}
-          />
-        </div>
-        <input type="submit" className="btn btn-primary" value="Register" />
-      </form>
-      <p className="my-1">
+
+      <Form onSubmit={e => onSubmit(e)}>
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Name
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={e => onChange(e)}
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Email
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={e => onChange(e)}
+            />
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm="2">
+            Confirm Password
+          </Form.Label>
+          <Col sm="10">
+            <Form.Control
+              type="password"
+              placeholder="Confirm Password"
+              name="password2"
+              value={password2}
+              onChange={e => onChange(e)}
+            />
+          </Col>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Register
+        </Button>
+      </Form>
+      <p>
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
     </Fragment>

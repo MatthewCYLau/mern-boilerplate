@@ -1,49 +1,42 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
+import { Navbar, Nav } from "react-bootstrap";
 
 const AppNavbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
-    <ul>
-      <li>
-        <Link to="/dashboard">
-          <i className="fas fa-user" />{" "}
-          <span className="hide-sm">Dashboard</span>
-        </Link>
-      </li>
-      <li>
-        <a onClick={logout} href="#!">
-          <i className="fas fa-sign-out-alt" />{" "}
-          <span className="hide-sm">Logout</span>
-        </a>
-      </li>
-    </ul>
+    <Nav className="mr-auto">
+      <Nav.Link href="/dashboard">
+        <i className="fas fa-user" />
+        Dashboard
+      </Nav.Link>
+      <Nav.Link href="#!" onClick={logout}>
+        <i className="fas fa-sign-out-alt" />
+        Logout
+      </Nav.Link>
+    </Nav>
   );
 
   const guestLinks = (
-    <ul>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-    </ul>
+    <Nav className="mr-auto">
+      <Nav.Link href="/register">Register</Nav.Link>
+      <Nav.Link href="/login">Login</Nav.Link>
+    </Nav>
   );
 
   return (
-    <nav className="navbar bg-dark">
-      <h1>
-        <Link to="/">
-          <i className="fas fa-code" /> MERN Stack Boilerplate
-        </Link>
-      </h1>
-      {!loading && (
-        <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-      )}
-    </nav>
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand href="/">
+        <i className="fas fa-code" /> MERN Stack Boilerplate
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        {!loading && (
+          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
+        )}
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
