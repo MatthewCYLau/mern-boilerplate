@@ -1,6 +1,6 @@
 # MERN stack boilerplate
 
-A boilerplate for building web app with the MERN stack.
+A boilerplate for building web app with the MERN stack, inspired by [this](https://github.com/bradtraversy/devconnector_2.0) project by Brad Traversy.
 
 ## Installation
 
