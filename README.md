@@ -15,7 +15,7 @@ cd .. # return to project root directory
 
 ## Add configurations
 
-Add two `.json` configuration files in the `config` directory, and save them `default.json` as and `production.json`
+Add two `.json` configuration files in the `config` directory, and save them as `default.json` and `production.json`
 
 The configuration files should contain the following:
 
@@ -32,6 +32,16 @@ In the project root directory, run this command:
 
 ```bash
 npm run dev
+```
+
+## Heroku Deployment
+
+In the project root directory, run this command:
+
+```bash
+heroku create #Create your app on Heroku
+git push heroku master #Deploy your app to Heroku
+
 ```
 
 ## Contributing
